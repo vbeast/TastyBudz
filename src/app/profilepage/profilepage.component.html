@@ -1,0 +1,58 @@
+<body>
+    <section id="navcontainer">
+        <nav class="level" id="banner">
+            <div class="level-left">
+                <div class="level-item" id="profilepic">
+                    <figure class="image is-96x96">
+                        <img class="is-rounded" src="../../assets/defaultprofilepic2.jpg">
+                    </figure>
+                    <h2 class="subtitle" id="name">
+                        name
+                    </h2>
+                </div>
+            </div>
+
+            <div class="level-right">
+                <div class="level-item">
+                    
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <section>
+        <button class="button" (click)= setDishes()> Click me</button>
+    </section>
+
+    <section id ="containment">
+        <app-recipecard id="foodcard" [dishes]="dishes" [fromProfilePage]="true"></app-recipecard>
+    </section>
+
+</body>
+
+<style>
+    #containment {
+        display: flex;
+    }
+    #banner {
+    background: url(../../assets/variety-of-sliced-fruits.jpg) center;
+    }
+    #name{
+        color: white;
+        padding-left: 20px;
+    }
+    #profilepic{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+    }
+    #navcontainer{
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    #foodcard{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+</style>

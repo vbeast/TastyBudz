@@ -1,0 +1,46 @@
+
+    <aside id="menu" class="menu">
+        <p class="menu-label">
+            Filter
+        </p>
+        <ul class="menu-list" *ngFor="let item of listItems; index as i">
+            <li>
+                <a (click)="toggleDisplay(i)">{{item}}
+                    <i id="icon" class="fa fa-caret-down"></i>
+                </a>
+                <ul>
+                    <li id="calories" *ngIf="isDisplay[i] == 1 && item =='Calories'">  
+                        <input class="input" type="text" placeholder="Min">
+                        <a>To:</a>
+                        <input class="input" type="text" placeholder="Max">    
+                    </li>
+                    <li id="health" *ngIf="isDisplay[i] == 1 && item =='Health'">  
+                        <label id="health-item" class="checkbox" *ngFor="let item of healthItems"> 
+                            <input type="checkbox">
+                             {{item}}
+                        </label>   
+                    </li>
+
+                    <li id="cooktime" *ngIf="isDisplay[i] == 1 && item =='Cook Time'">  
+                        <input class="input" type="text" placeholder="Max Cook Time">   
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+  
+
+
+<style>
+    #calories{
+        display: flex;
+    }
+    #health-item{
+        padding-right: 10px;
+    }
+    #icon{
+        float: right;
+    }
+    
+
+</style>

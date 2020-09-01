@@ -1,0 +1,56 @@
+<!-- <img src="../../assets/food2.jpg"> -->
+
+<div class="hero"></div>
+
+<style>
+     
+.hero {
+    background: url(../../assets/stweak.jpg) center / cover;
+    
+}
+#search {
+    width:700px; 
+}
+#scont {
+    padding-left: 320px;
+    padding-bottom: 800px;
+}
+#foot {
+    padding-bottom: 250px;
+}
+#copyright {
+    float: right;
+}
+/* #foodcard{
+    display: flex;
+    flex-wrap: wrap;
+    border: 10px solid orange;
+    padding-left: 78px; */
+    /* justify-content: space-evenly; */
+/* } */
+</style> 
+
+<body>
+    <section class="hero is-fullheight">
+        <div class="hero-body">
+            <div id="scont" class="container">
+                <input id="search" class="input is-rounded" type="text" placeholder="Search" [(ngModel)]="query" (keyup.enter)="goToViewRecipies()">
+            </div>
+        </div>
+      
+    </section>
+
+    <!-- <div class="container" id="foodgrid">
+        <app-recipecard id="foodcard" [images]="cardImage"></app-recipecard>
+    </div> -->
+    <button class="button is-primary" (click)="urlToRecipe()"></button>
+    
+</body>
+
+
+
+<footer id="foot">
+    <div id="copyright">
+        <p>&copy; 2020 Varun Balusu</p>
+    </div>
+</footer>
