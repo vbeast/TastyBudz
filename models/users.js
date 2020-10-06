@@ -5,7 +5,8 @@ var User = mongoose.model("User", {
     lastname: {type: String},
     email: {type: String},
     password: {type: String},
-    recipies: {type: []}
+    recipies: {type: []},
+    userType: {type: String}
 
 })
 

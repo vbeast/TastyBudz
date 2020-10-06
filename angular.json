@@ -25,10 +25,14 @@
             ],
             "styles": [
               "node_modules/bulma/css/bulma.min.css",
-              "src/styles.css"
+              "node_modules/animate.css/animate.min.css",
+              "src/styles.css",
+              "node_modules/slick-carousel/slick/slick.css",
+              "node_modules/slick-carousel/slick/slick-theme.css"
             ],
             "scripts": [
-              
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
             ]
           },
           "configurations": {

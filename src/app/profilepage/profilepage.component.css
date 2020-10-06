@@ -1,0 +1,61 @@
+#containment {
+    display: flex;
+    padding-left: 30px;
+    /* background-color:rgb(245,245,245) */
+}
+#banner {
+background: url(../../assets/variety-of-sliced-fruits.jpg) center;
+}
+#name{
+    color: white;
+    padding-left: 20px;
+}
+#profilepic{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+#navcontainer{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#foodcard{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding-top: 20px;
+    
+}
+#cuisineName{
+    font-family: Didot, serif;
+    font-size: 20px;
+    position: absolute;
+    text-transform: capitalize;
+    padding-left: 20px;
+}
+#border{
+    display: flex;
+    padding-left: 10px;
+}
+#menu{
+    width: 350px;
+    /* background-color: rgb(218, 95, 95); */
+}
+#title{
+    font-size: larger;
+    font-family: palatino;
+    padding-left: 10px;
+}
+#line{
+    margin-top: 0;
+}
+#beg{
+    padding-top: 10px;
+}
+#loginText{
+    width: 50%;
+    /* margin: auto; */
+    text-align: center;
+    color: gray;
+    opacity: 0.5;
+}

@@ -15,8 +15,11 @@ import { RecipecardComponent } from './recipecard/recipecard.component';
 import { ViewrecipiesComponent } from './viewrecipies/viewrecipies.component';
 import { MenuComponent } from './menu/menu.component';
 import { from } from 'rxjs';
-import { FlashMessagesModule } from 'angular2-flash-messages';
 import { ProfilepageComponent } from './profilepage/profilepage.component';
+import {SlideshowModule} from 'ng-simple-slideshow';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { RecipeCarouselComponent } from './recipe-carousel/recipe-carousel.component';
 
 
 @NgModule({
@@ -29,7 +32,9 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
     RecipecardComponent,
     ViewrecipiesComponent,
     MenuComponent,
-    ProfilepageComponent
+    ProfilepageComponent,
+    LoadingSpinnerComponent,
+    RecipeCarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -37,8 +42,9 @@ import { ProfilepageComponent } from './profilepage/profilepage.component';
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
+    SlideshowModule,
     NgxWebstorageModule.forRoot(),
-    FlashMessagesModule.forRoot(),
+    SlickCarouselModule
   ],
   providers: [HomepageComponent],
   bootstrap: [AppComponent]

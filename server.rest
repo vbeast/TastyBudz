@@ -1,0 +1,6 @@
+POST  http://localhost:3000/users/checkValid
+Content-Type: application/json
+
+{
+    "token": "123"
+}

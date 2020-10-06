@@ -1,7 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {Navbar} from "../navbar";
 import {Router} from "@angular/router";
 import { UserService } from '../services/user-service.service';
+import { SearchinteractionService } from '../searchinteraction.service';
+import { DeviceDetectorService } from 'ngx-device-detector';
+import {LoggedInServiceService} from'../logged-in-service.service'
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,7 +13,10 @@ import { UserService } from '../services/user-service.service';
 })
 export class NavBarComponent implements OnInit {
 
-  loggedIn: boolean;
+  loggedIn: Boolean;
+  sendquery;
+  query;
+  @Input() onHomepage: boolean;
 
   navbar: Navbar = {
     about: "About",
@@ -23,38 +29,38 @@ export class NavBarComponent implements OnInit {
 
 
 
-  constructor(private router: Router, private userService: UserService) { 
+  constructor(private router: Router, private userService: UserService, private searchService: SearchinteractionService, private LoggedInService: LoggedInServiceService) { 
    
 
   }
 
   ngOnInit(): void {
     var isLoggedIn = this.userService.getLocalStorage()
-    console.log("onInit: " + isLoggedIn)
-   this.userService.userId.subscribe(id =>{
-      console.log(id)
-      
-   })
-    if(isLoggedIn == null){
-      this.loggedIn = false
-    }
+    if(isLoggedIn != null){
+        var token = isLoggedIn.token
+        this.userService.checkValid(token).subscribe(
+          data=>{
+          this.loggedIn = true
+          this.LoggedInService.verifyLogin(this.loggedIn)
+        },
+        error=> {
+          console.log(error.status)
+          this.loggedIn = false
+          this.LoggedInService.verifyLogin(this.loggedIn)
+        })
+      }
     else{
-      this.loggedIn = true;
+      this.loggedIn= false
     }
-  
   }
-
+  goToProfile(){
+    this.router.navigate(["/profilepage",])
+  }
   goToHome(){
     this.router.navigate(["/home",])
   }
   goToSignin(){
     this.router.navigate(["/signin",])
-    this.userService.userId.subscribe(id =>{
-      console.log(id)
-      if(id == "userInfo"){
-        this.loggedIn = true
-      }
-    })
   }
   goToSignup(){
     this.router.navigate(["/signup",])
@@ -63,9 +69,14 @@ export class NavBarComponent implements OnInit {
   signOut(){
     this.userService.clearLocalStorage()
     this.loggedIn=false;
+    this.LoggedInService.verifyLogin(this.loggedIn)
+    this.goToHome()
   }
-  id(){
-    console.log (this.userService.printId())
+
+  goToViewRecipies(){
+    this.sendquery=this.query
+    this.searchService.relaySearch(this.sendquery)
+    this.router.navigate(["/viewrecipes",])
   }
 
 }

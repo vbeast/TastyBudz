@@ -1,29 +1,77 @@
+<app-nav-bar></app-nav-bar>
+<div [ngClass]="notifExit" *ngIf="showNotif == true" id="notif">
+    <button class="delete"></button>
+    {{notifContent}}
+</div>
 <div id="foodcontainer" class="container">
-    <input id="foodsearch" class="input" type="text" placeholder="Seach Recipies">
+    <input id="foodsearch" class="input" type="text" placeholder="Seach Recipies" [(ngModel)]="newsearch" (keyup.enter)="fetchRecipe(newsearch)">
 </div>
 
 <div class="section" id="section">
+    <div class="tags" id="balusu">
+        <span class="tag is-medium is-rounded" *ngFor="let filter of ingredFilters">
+            <p>{{filter}}</p>
+            <button class="delete is-small" (click)="revertDishes(filter)"></button>
 
-    <app-menu id="menu"></app-menu>
-    
-    <app-recipecard id="foodcard" [dishes]="dishes"></app-recipecard>
+        </span>
+    </div>
+    <div class="container" id="cont">
+        <app-menu id="menu" (sendFilter) = "addFilterIngred($event)"></app-menu>
+
+        <app-loading-spinner id='loading' *ngIf='showSpinner == true'></app-loading-spinner>
+
+        <app-recipecard id="foodcard" [dishes]="showDishes" (saved) = "recipeWasSaved($event)"></app-recipecard>
+    </div>
+    <button class="button is-danger" id="loadMore" (click)="loadMore()">Show More</button>
+    <hr>
     
        
     
 </div>
 
 <style>
-    #section{
+    #notif{
+        text-align: center;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100000;
+    }
+    #loadMore{
+        margin: auto;
+        display: block;
+    }
+    .section{
+        padding-top: 0px;
+    }
+    #varun{
+        padding-bottom: 25px;
+        float: right;
+    }
+    #balusu{
+        height: 60px;
+        margin-left: 298px;
+        padding-top: 15px;
+        overflow: auto;
+    }
+    #loading{
+        padding-left: 500px;
+      
+    }
+    #cont{
         display: flex;
+        padding-right: 40px;
     }
     #foodcard{
     display: flex;
     flex-wrap: wrap;
     width: 80%;
+    z-index: 5;
 
      }
      #menu{
          width: 20%;
+         z-index: 5;
      }
      #foodsearch{
          width: 80%;

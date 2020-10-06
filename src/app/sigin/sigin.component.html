@@ -1,21 +1,41 @@
+<app-nav-bar></app-nav-bar>
 
- <form>
-    <div class="field">
-        <label class="label" for="email">Email</label>
-        <div class="control">
-            <input class="input" name="email" type="text" placeholder="Text input" [(ngModel)]="email">
+<div id="form">
+    <form> 
+        <label class="label" id="title">Sign In</label>
+        <div id="fieldContainer" class="notification is-grey is-darker">
+            <div class="field">
+                <label class="label" for="email">Email</label>
+                <div class="control">
+                    <input class="input" name="email" type="text" placeholder="Text input" [(ngModel)]="email">
+                </div>
+                
+            </div>
+
+            <div class="field">
+                <label class="label" for="password">Password</label>
+                <div class="control">
+                    <input class="input" name="password" type="password" placeholder="Text input" [(ngModel)]="password">
+                </div>
+                
+            </div>
         </div>
-        
-    </div>
+        <input class="button is-info" type="submit" value="Sign In" (click)="validate()">
 
-    <div class="field">
-        <label class="label" for="password">Password</label>
-        <div class="control">
-            <input class="input" name="password" type="password" placeholder="Text input" [(ngModel)]="password">
-        </div>
-        
-    </div>
-    
-    <input class="button is-info" type="submit" value="bitvhass" (click)="validate()">
+    </form>
+</div>
+ <style>
+     #title{
+         font-size: larger;
+     }
+     #form{
+         width: 50%;
+         margin-left: 25%;
+         margin-top: 5%;
+         
+     }
+     #fieldContainer{
 
- </form>
+     }
+
+ </style>

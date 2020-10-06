@@ -1,52 +1,229 @@
-<!-- <img src="../../assets/food2.jpg"> -->
 
-<div class="hero"></div>
 
 <style>
      
-.hero {
-    background: url(../../assets/stweak.jpg) center / cover;
+     .hero {
+        background: url(../../assets/stweak.jpg) center/ cover;
+        /* object-fit: cover; */
+        
+    }
+    #carousel{
+        width: auto;
+        /* height: 400px; */
+        border: 0.5px solid transparent;
+        
+    }
+    #search {
+        width:700px; 
+    }
     
-}
-#search {
-    width:700px; 
-}
-#scont {
-    padding-left: 320px;
-    padding-bottom: 800px;
-}
-#foot {
-    padding-bottom: 250px;
-}
-#copyright {
-    float: right;
-}
-/* #foodcard{
-    display: flex;
-    flex-wrap: wrap;
-    border: 10px solid orange;
-    padding-left: 78px; */
-    /* justify-content: space-evenly; */
-/* } */
-</style> 
+    #foot {
+        padding-bottom: 250px;
+    }
+    #copyright {
+        float: right;
+    }
+    #body {
+        width: auto;
+        height: auto;
+        padding-top: 20px;
+        
+        
+
+    }
+    #foodpic {
+        /* object-fit: cover; */
+        /* border-radius: 15px; */
+        /* box-shadow:
+            0 6px 5.6px rgba(0, 0, 0, 0.039),
+            0 14.4px 13.4px rgba(0, 0, 0, 0.057),
+            0 27.2px 25.3px rgba(0, 0, 0, 0.07),
+            0 48.5px 45.1px rgba(0, 0, 0, 0.083),
+            0 90.7px 84.4px rgba(0, 0, 0, 0.101),
+            0 217px 202px rgba(0, 0, 0, 0.14); */
+        /* max-height: 300px;
+        max-width: 300px; */
+        /* object-fit: cover; */
+        display: block;
+
+
+    }
+    #imageContainer {
+        /* display: flex; */
+        width: 800px;
+        height: 100%;
+        justify-content: center;
+        /* align-items: center; */
+        /* position: absolute; */
+        /* padding-top: 60px;
+        padding-left: 175px; */
+        object-fit: cover;
+        ;
+    
+    }
+    #picBorder{
+        max-width: 300px;
+        max-height: 300px;
+        
+        border-radius: 15px;
+    }
+    #cuisineTitle{
+        padding-left: 250px;
+        position: absolute;
+        bottom: 0;
+        /* text-decoration: underline; */
+        text-shadow: -5px 6px 20px rgba(0,0,0,0.76);
+        font-family: Palatino;
+        font-style: normal;
+        font-weight: 400;
+        
+    }
+    #cuisineTitleContainer {
+        width: auto;
+        height: 20%;
+        padding-top: 60px;
+    }
+    #arrow{
+        font-size: 40px;
+        cursor: pointer;
+        padding-left: 15px;
+    }
+    
+    #arrowContainer{
+        padding-left: 165px;
+        width: 24px;
+        padding-top: 120px;
+        justify-content: center;
+        
+    }
+    
+    #viewText{
+        white-space: nowrap;
+        text-shadow: -5px 6px 20px rgba(0,0,0,0.76);
+    }
+    #secondSection{
+        /* background-color: wheat; */
+        text-align: center;
+    }
+    #LoveText{
+        font-weight: bold;
+        font-size: 25px;
+        font-family: Palatino;
+
+    }
+    #column1{
+        /* background-color:rgb(238, 233, 222); */
+        border-right: 1px solid gray;
+    }
+    #column2{
+        border-right: 1px solid gray;
+    }
+
+    #textColumns{
+        padding-top: 12px;
+        border-top: 1px solid gray;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+
+    #columnsContainer{
+        background-color:rgb(245,245,245);
+        padding-top: 12px;
+    }
+    .column-text{
+        font-weight: 70px;
+        font-family: Palatino;
+    }
+    .column-text-underline{
+        font-weight: 70px;
+        font-family: Palatino;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    #links{
+        text-align: center;
+        background-color:rgb(245,245,245);
+        font-family: Palatino;
+        font-weight: 60px;
+        font-size: large;
+        
+    }
+    #hero{
+        background: url(../../assets/cheese.jpg) center/ cover;
+        height: 400px;
+        overflow: auto;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        font-weight:bolder;
+        font-size: 50px;
+    }
+    #heroSearch{
+        width: 550px;
+        height: 60px;
+        /* opacity: 0.7; */
+        background-color: rgba(255, 255, 255, 0.7);
+        color: black;
+    }
+    #searchicon{
+        height: 60px;
+        padding-top: 15px;
+        color: gray;
+        font-size: 30px;
+    }
+   
+   
+
+
+</style>
+
+<app-nav-bar [onHomepage] = "true"></app-nav-bar>
 
 <body>
-    <section class="hero is-fullheight">
-        <div class="hero-body">
-            <div id="scont" class="container">
-                <input id="search" class="input is-rounded" type="text" placeholder="Search" [(ngModel)]="query" (keyup.enter)="goToViewRecipies()">
-            </div>
-        </div>
-      
-    </section>
-
-    <!-- <div class="container" id="foodgrid">
-        <app-recipecard id="foodcard" [images]="cardImage"></app-recipecard>
-    </div> -->
-    <button class="button is-primary" (click)="urlToRecipe()"></button>
+    <div id="hero"> 
+        <!-- <input class="input has-icons-right" id="heroSearch" placeholder="Search Recipies"> -->
     
-</body>
+        <p class="control has-icons-left">
+            <input class="input has-icons-left is-light" id="heroSearch" [(ngModel)] ="sendquery" (keyup.enter)="goToViewRecipies(null)" placeholder="Search Recipies">
+            <span class="icon is-left">
+                <i class="fas fa-search fa-2x" id="searchicon"></i>
+            </span>
+          </p>
+    </div>
 
+<div class="section animate__animated animate__fadeIn animate__slower" id="secondSection" >
+    <h1 id="LoveText">Featured Recipies</h1>
+    <app-recipe-carousel id="recipecar"></app-recipe-carousel>
+</div >
+<div id="links">
+    <h2>Quick Links</h2>
+</div>
+<div class="section" id="columnsContainer">
+    <div class="columns is-desktop" id="textColumns">
+        <div class="column" id="column1">
+            <ul>
+                <li [ngClass]="underline[i]" (mouseover)="mouseOverUnderline(i, 'columnOne')"  (mouseout)="mouseLeaveUnderline(i, 'columnOne')" *ngFor="let name of columnOne, index as i" (click)="goToViewRecipies(name)">
+                    {{name}}
+                </li>
+            </ul>
+        </div>
+        <div class="column" id="column2">
+            <ul>
+                <li [ngClass]="underline2[i]" (mouseover)="mouseOverUnderline(i, 'columnTwo')"  (mouseout)="mouseLeaveUnderline(i, 'columnTwo')" *ngFor="let name of columnTwo, index as i" (click)="goToViewRecipies(name)">
+                    {{name}}
+                </li>
+            </ul>
+        </div>
+        <div class = "column">
+            <ul>
+                <li [ngClass]="underline3[i]" (mouseover)="mouseOverUnderline(i, 'columnThree')"  (mouseout)="mouseLeaveUnderline(i, 'columnThree')" *ngFor="let name of columnThree, index as i" (click)="goToViewRecipies(name)">
+                    {{name}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+</body>
 
 
 <footer id="foot">

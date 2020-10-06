@@ -30,29 +30,41 @@ export class UserService {
    
   }
 
-  public getUser(email:String): Observable<any> {
+  public checkValid(token: String) {
+    const httpOptions = {headers:new HttpHeaders({'Content-Type':'application/json'})};
+    return this.http.post("http://localhost:3000/users/checkValid", {token}, httpOptions)
+
+  }
+
+  public getUser(email:String, password:String): Observable<any> {
     const httpOptions = {headers:new HttpHeaders({'Content-Type':'application/json'})};
     console.log("fetching user from database");
-    return this.http.get("http://localhost:3000/users/fetchById/" + email, httpOptions);
+    return this.http.post("http://localhost:3000/users/fetchById", {email, password}, httpOptions);
+
+  }
   
+  public retrieveRecipies(token){
+    const httpOptions = {headers:new HttpHeaders({'Content-Type':'application/json'})};
+
+    return this.http.post("http://localhost:3000/users/retrieveContent", {token}, httpOptions)
   }
 
-  public updateUser(recipe, userId){
+  public updateUser(recipe, token){
+    console.log("in userService")
     const httpOptions = {headers:new HttpHeaders({'Content-Type':'application/json'})};
-    console.log("in user service updateUser function adding to this Id: " + userId)
-    console.log("in user service updateUser function adding this recipe:" + JSON.stringify(recipe))
-    var url = "http://localhost:3000/users/update/" + userId;
+    // console.log("in user service updateUser function adding to this Id: " + userId)
+    // console.log("in user service updateUser function adding this recipe:" + JSON.stringify(recipe))
+    var url = "http://localhost:3000/users/update"
     console.log(url)
    
-    //var recipe = JSON.stringify(recipe)
-    this.http.put(url, recipe,  httpOptions).subscribe(data => console.log(data));
+    return this.http.put(url, {recipies:recipe, token},  httpOptions).subscribe(data => console.log(data));
   }
 
-  public deleteItem(recipe, userId){
+  public deleteItem(recipe, token){
     const httpOptions = {headers:new HttpHeaders({'Content-Type':'application/json'})};
-    var url = "http://localhost:3000/users/deleteItem/" + userId;
+    var url = "http://localhost:3000/users/deleteItem"
 
-    this.http.put(url, recipe,  httpOptions).subscribe(data => console.log(data));
+    this.http.put(url, {recipies: recipe, token},  httpOptions).subscribe(data => console.log(data));
 
   }
 
@@ -64,9 +76,9 @@ export class UserService {
 
   setLocalStorage(user){
 
-    this.updateId("userInfo")
-    this.localStorage.store("userInfo", user._id)
-    this.localStorage.store("userEmail", user.email)
+    // this.updateId("userInfo")
+    this.localStorage.store("userInfo", user)
+    // this.localStorage.store("userEmail", user.email)
     
   }
   

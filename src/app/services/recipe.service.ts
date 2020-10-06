@@ -8,9 +8,9 @@ export class RecipeService {
 
   constructor(private http: HttpClient) { }
 
-  getRecipe(url: string){
+  getRecipe(searchQuery){
     const httpOptions = {headers:new HttpHeaders({'Content-Type':'application/json'})};
-    return this.http.get(url, httpOptions)
+    return this.http.post("http://localhost:3000/recipe/fetchRecipe",{searchQuery}, httpOptions)
    
   }
 

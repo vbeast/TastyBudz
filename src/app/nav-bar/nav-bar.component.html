@@ -12,28 +12,22 @@
         <a class="navbar-item" (click)="goToHome()">
           {{navbar.home}}
         </a>
-  
-        <a class="navbar-item">
-          {{navbar.contact}}
-        </a>
-        <a class="navbar-item">
+        <a class="navbar-item" (click)="goToProfile()">
             {{navbar.myprofile}}
           </a>
+
       </div>
   
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
-            <a class="button is-primary" *ngIf="loggedIn===false" (click)="id()">
+            <a class="button is-primary" *ngIf="loggedIn===false" (click)= "goToSignup()">
               <strong>Sign up</strong>
             </a>
             <a class="button is-light" *ngIf="loggedIn===false" (click)="goToSignin()">
               Log in
             </a>
-            <a class="button is-primary" *ngIf="loggedIn!==false" (click)="goToSignin()">
-              My Profile
-            </a>
-            <a class="button is-light" *ngIf="loggedIn!==false" (click)="signOut()">
+            <a class="button is-danger" *ngIf="loggedIn!==false" (click)="signOut()">
               Sign Out
             </a>
           </div>
@@ -41,3 +35,5 @@
       </div>
     </div>
   </nav>
+
+  

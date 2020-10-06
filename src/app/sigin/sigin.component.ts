@@ -23,9 +23,9 @@ export class SiginComponent implements OnInit {
 
 validate(){
   
-  this.userService.getUser(this.email).subscribe(data => {
+  this.userService.getUser(this.email, this.password).subscribe(data => {
 
-    if (this.password == data.password) {
+    if (data.token != null) {
       this.userService.setLocalStorage(data)
       this.router.navigate(["/home"])
     }
