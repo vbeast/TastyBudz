@@ -12,8 +12,8 @@ var app = express();
 app.use(bodyParser.json({ limit: "50mb" }))
 
 const port = process.env.PORT || 8080;
-
-app.listen(port, () => console.log("server started at port 3000"))
+//port, () => console.log("server started at port"+ port)
+app.listen(process.env.PORT, '0.0.0.0')
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
