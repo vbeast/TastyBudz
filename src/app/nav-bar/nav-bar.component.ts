@@ -57,7 +57,7 @@ export class NavBarComponent implements OnInit {
     this.router.navigate(["/profilepage",])
   }
   goToHome(){
-    this.router.navigate(["/home",])
+    this.router.navigate(["",])
   }
   goToSignin(){
     this.router.navigate(["/signin",])

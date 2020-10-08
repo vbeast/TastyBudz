@@ -8,26 +8,24 @@
                 <img id="picture" *ngIf="fromProfilePage !== true" src="{{dish.recipe.image}}">
                 <img id="picture" *ngIf="fromProfilePage === true" src="{{dish.image}}">
                 <div id="myoverlay" class="overlay">
-                    <!-- hearts and add and delete recipies functionality -->
                     <button id="saveRecipe"[hidden]="heart[i]==true"  (click)="addToCookbook(i,dish)" *ngIf="fromProfilePage !== true">
                         <i id="heart1" class="far fa-heart"></i>
                     </button>
                     <button id="saveRecipe1" [hidden]="heart[i]==false && fromProfilePage !== true" *ngIf="heart[i]==true" (click)="removeFromCookbook(i, dish)">
                         <i id="heart" class="fas fa-heart"></i>
                     </button>
-                    <!-- trash icons and delete from saved recipies functionality -->
                     <button id="trash_recipe" *ngIf="fromProfilePage == true" (click)="deleteDish(i, dish); deletionHappened(dish)">
                         <i id="trash_icon" class="fa fa-times"></i>
                     </button>
 
                     <!-- labels -->
-                    <div id="mycontent" *ngIf="fromProfilePage !== true" class="content" (click)='viewRecipe(dish)'>
+                    <div id="mycontent" *ngIf="fromProfilePage !== true" class="content" (click)='viewRecipe(dish, false)'>
                         {{dish.recipe.label}}
                         <div>
                             <i id='navArrow' class="fas fa-arrow-right"></i>
                         </div>   
                     </div>
-                    <div id="mycontent" *ngIf="fromProfilePage === true" class="content">
+                    <div id="mycontent" *ngIf="fromProfilePage === true" class="content" (click)='viewRecipe(dish, true)'>
                         {{dish.label}}
                         <div>
                             <i id='navArrow' class="fas fa-arrow-right"></i>
@@ -37,27 +35,3 @@
             </div>
         </figure>
 </div>
-    <!-- <div class="card-content">
-        <div class="content">
-            {{dish.recipe.label}}
-        </div>
-        <div class="content" *ngIf="dish.recipe.totalTime != 0">
-            Cook Time: {{dish.recipe.totalTime}}
-        </div>
-        <div class="content" *ngIf="dish.recipe.totalTime == 0">
-            Cook Time: Not Avaliable
-        </div>
-    </div>
-</div> -->
-
-<!-- <div class="card-content">
-    <div class="content">
-        {{dish.recipe.label}}
-    </div>
-    <div class="content" *ngIf="dish.recipe.totalTime != 0">
-        Cook Time: {{dish.recipe.totalTime}}
-    </div>
-    <div class="content" *ngIf="dish.recipe.totalTime == 0">
-        Cook Time: Not Avaliable
-    </div>
-</div> -->

@@ -1,10 +1,6 @@
 #containment {
     display: flex;
     padding-left: 30px;
-    /* background-color:rgb(245,245,245) */
-}
-#banner {
-background: url(../../assets/variety-of-sliced-fruits.jpg) center;
 }
 #name{
     color: white;
@@ -38,8 +34,8 @@ background: url(../../assets/variety-of-sliced-fruits.jpg) center;
     padding-left: 10px;
 }
 #menu{
-    width: 350px;
-    /* background-color: rgb(218, 95, 95); */
+    width: 325px;
+    flex-shrink: 0; 
 }
 #title{
     font-size: larger;
@@ -54,7 +50,6 @@ background: url(../../assets/variety-of-sliced-fruits.jpg) center;
 }
 #loginText{
     width: 50%;
-    /* margin: auto; */
     text-align: center;
     color: gray;
     opacity: 0.5;

@@ -20,7 +20,7 @@ export class HomepageComponent implements OnInit {
   
   columnOne = ["Breakfast", "Lunch", "Dinner", "Dessert", "Smoothie"]
   underline = new Array(this.columnOne.length).fill('column-text')
-  columnTwo = ["Italian", "Indian", "Chineese", "Medditeranian", "American"]
+  columnTwo = ["Italian", "Indian", "Chineese", "Mediterranean", "American"]
   underline2 = new Array(this.columnTwo.length).fill('column-text')
   columnThree = ["Pasta", "Fried Rice", "Chicken", "Steak", "Soups"]
   underline3 = new Array(this.columnThree.length).fill('column-text')

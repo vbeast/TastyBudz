@@ -10,21 +10,9 @@ export class RecipeService {
 
   getRecipe(searchQuery){
     const httpOptions = {headers:new HttpHeaders({'Content-Type':'application/json'})};
-    return this.http.post("http://localhost:3000/recipe/fetchRecipe",{searchQuery}, httpOptions)
+    return this.http.post("recipe/fetchRecipe",{searchQuery}, httpOptions)
    
   }
-
-  convertRecipe(url: string){
-   // console.log('"' + url + '"')
-    var bodyurl = '"' + url + '"'
-    var b = "url"
-   // console.log({url:url})
-    const httpOptions = {headers:new HttpHeaders({'Content-Type':'application/json'})};
-    return this.http.post("http://localhost:3000/convertRecipe",{'url':url}, httpOptions).toPromise()
-  }
-
-
-
 }
 
 

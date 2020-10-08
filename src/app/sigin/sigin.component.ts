@@ -27,7 +27,7 @@ validate(){
 
     if (data.token != null) {
       this.userService.setLocalStorage(data)
-      this.router.navigate(["/home"])
+      this.router.navigate([""])
     }
     
   });

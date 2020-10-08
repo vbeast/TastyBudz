@@ -1,0 +1,13 @@
+#cooktimebutton{
+    width: 100%;
+    border: transparent;
+}
+#calories{
+    display: flex;
+}
+#health-item{
+    padding-right: 10px;
+}
+#icon{
+    float: right;
+}

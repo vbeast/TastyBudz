@@ -13,7 +13,7 @@ import {RecipeCarouselComponent} from './recipe-carousel/recipe-carousel.compone
 const routes: Routes = [
   {path: "signin", component: SiginComponent},
   {path: "signup", component: SignupComponent},
-  {path: "home", component: HomepageComponent},
+  {path: "", component: HomepageComponent},
   {path: "viewrecipes", component: ViewrecipiesComponent},
   {path: "menu", component: MenuComponent},
   {path: "profilepage", component: ProfilepageComponent},

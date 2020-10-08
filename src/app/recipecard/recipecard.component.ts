@@ -74,8 +74,13 @@ export class RecipecardComponent implements OnInit {
     this.userService.deleteItem(recipeObject, userInfo.token)
   }
 
-  viewRecipe(dish){
-      window.open(dish.recipe.url, '_blank');
+  viewRecipe(dish, onProfPage){
+      if(onProfPage){
+        window.open(dish.url, '_blank');
+      }
+      else{
+        window.open(dish.recipe.url, '_blank');
+      }
   }
 }
 
