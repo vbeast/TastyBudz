@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
+require('dotenv').config()
 
-mongoose.connect("mongodb://localhost:27017/CrudDB",{ useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true  }, (err) => {
+mongoose.connect("mongodb+srv://varunbalusu:"+process.env.PASS+"@cluster0.sxey7.mongodb.net/CrudDB?retryWrites=true&w=majority",{ useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true  }, (err) => {
     if(!err){
         console.log("success")
     }
