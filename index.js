@@ -6,14 +6,17 @@ var userController = require("./controllers/usercontroller.js")
 var recipeController = require("./controllers/recipecontroller.js")
 const { ConsoleReporter } = require("jasmine")
 // var corejs = require('core-js')
-
+const path = require('path')
 
 var app = express();
 app.use(bodyParser.json({ limit: "50mb" }))
-
+app.use(express.static(path.join(__dirname, "dist/varun")))
 const port = process.env.PORT || 8080;
 //port, () => console.log("server started at port"+ port)
-app.listen(process.env.PORT, '0.0.0.0')
+// app.listen(process.env.PORT, '0.0.0.0')
+app.listen(3000, () => {
+  console.log("started at port 3000")
+})
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
@@ -24,3 +27,7 @@ app.use(function(req, res, next) {
 
 app.use("/users", userController)
 app.use("/recipe", recipeController)
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist/varun/index.html'));
+});
