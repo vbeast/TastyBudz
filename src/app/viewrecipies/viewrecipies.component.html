@@ -1,12 +1,12 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <app-nav-bar></app-nav-bar>
 <div [ngClass]="notifExit" *ngIf="showNotif == true" id="notif">
     {{notifContent}}
 </div>
 <div id="foodcontainer" class="container">
     <input id="foodsearch" class="input" type="text" placeholder="Seach Recipies" [(ngModel)]="newsearch" (keyup.enter)="fetchRecipe(newsearch)">
-</div>
-
-<div class="section" id="section">
     <div class="tags" id="balusu">
         <span class="tag is-medium is-rounded" *ngFor="let filter of ingredFilters">
             <p>{{filter}}</p>
@@ -14,6 +14,16 @@
 
         </span>
     </div>
+</div>
+
+<div class="section" id="section">
+    <!-- <div class="tags" id="balusu">
+        <span class="tag is-medium is-rounded" *ngFor="let filter of ingredFilters">
+            <p>{{filter}}</p>
+            <button class="delete is-small" (click)="revertDishes(filter)"></button>
+
+        </span>
+    </div> -->
     <div class="container" id="cont">
         <app-menu id="menu" (sendFilter) = "addFilterIngred($event)"></app-menu>
 
@@ -21,6 +31,6 @@
 
         <app-recipecard id="foodcard" [dishes]="showDishes" (saved) = "recipeWasSaved($event)"></app-recipecard>
     </div>
-    <button class="button is-danger" id="loadMore" (click)="loadMore()">Show More</button>
+    <button class="button is-danger" id="loadMore" (click)="loadMore()">Show More</button>    
     <hr>
 </div>
