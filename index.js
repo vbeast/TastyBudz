@@ -14,8 +14,8 @@ app.use(express.static(path.join(__dirname, "dist/varun")))
 const port = process.env.PORT || 8080;
 //port, () => console.log("server started at port"+ port)
 // app.listen(process.env.PORT, '0.0.0.0')
-app.listen(3000, () => {
-  console.log("started at port 3000")
+app.listen(port, () => {
+  console.log("started at port" + port)
 })
 
 app.use(function(req, res, next) {
