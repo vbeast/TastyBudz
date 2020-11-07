@@ -24,7 +24,8 @@
     overflow: auto;
 }
 #loading{
-    padding-left: 34vw; 
+    padding-left: 34vw;
+    width: 80%;
 }
 #cont{
     display: flex;
@@ -34,7 +35,7 @@
 #foodcard{
 display: flex;
 flex-wrap: wrap;
-width: 80%;
+/* width: 80%; */
 z-index: 5;
 
  }
