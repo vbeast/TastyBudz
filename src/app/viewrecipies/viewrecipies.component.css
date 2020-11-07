@@ -31,6 +31,10 @@
     padding-right: 40px;
     
 }
+#innercont{
+    width: 80%;
+    z-index: 5;
+}
 #foodcard{
 display: flex;
 flex-wrap: wrap;
