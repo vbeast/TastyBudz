@@ -35,7 +35,7 @@
 #foodcard{
 display: flex;
 flex-wrap: wrap;
-/* width: 80%; */
+width: 80%;
 z-index: 5;
 
  }
@@ -49,9 +49,4 @@ z-index: 5;
  #foodcontainer{
      padding-left: 19vw;
      position: relative;
- }
- #innerflex{
-     display: flex;
-     flex-direction: column;
-     align-items: center;
  }
