@@ -49,3 +49,7 @@ z-index: 5;
      padding-left: 19vw;
      position: relative;
  }
+ #innerflex{
+     display: flex;
+     flex-direction: column;
+ }
