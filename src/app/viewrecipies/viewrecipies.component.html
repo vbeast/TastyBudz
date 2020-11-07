@@ -30,7 +30,7 @@
         <app-loading-spinner id='loading' *ngIf='showSpinner == true'></app-loading-spinner>
         <div id="innercont">
             <app-recipecard id="foodcard" [dishes]="showDishes" (saved) = "recipeWasSaved($event)"></app-recipecard>
-            <button class="button is-danger" id="loadMore" (click)="loadMore()">Show More</button> 
+            <button class="button is-danger" id="loadMore" *ngIf = 'showSpinner == false' (click)="loadMore()">Show More</button> 
         </div>
         
         
