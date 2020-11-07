@@ -30,7 +30,10 @@
         <app-loading-spinner id='loading' *ngIf='showSpinner == true'></app-loading-spinner>
 
         <app-recipecard id="foodcard" [dishes]="showDishes" (saved) = "recipeWasSaved($event)"></app-recipecard>
+        <div>
+            <button class="button is-danger" id="loadMore" (click)="loadMore()">Show More</button> 
+        </div>
     </div>
-    <button class="button is-danger" id="loadMore" (click)="loadMore()">Show More</button>    
+    <!-- <button class="button is-danger" id="loadMore" (click)="loadMore()">Show More</button>     -->
     <hr>
 </div>
