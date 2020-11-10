@@ -67,10 +67,6 @@ export class UserService {
     this.localStorage.store("userInfo", user)
     
   }
-  
-  printId(){
-    return (this.id)
-  }
 
   getLocalStorage(){
     

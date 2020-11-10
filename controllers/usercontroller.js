@@ -1,6 +1,5 @@
 const express = require("express")
 var router = express.Router();
-//var ObjectId = require("mongoose").Types.ObjectId
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const checkAuth = require('../middleware/auth');

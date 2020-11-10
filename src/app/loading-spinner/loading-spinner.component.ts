@@ -6,21 +6,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoadingSpinnerComponent implements OnInit {
 
-  // slideConfig = {"slidesToShow": 1, "slidesToScroll": 1, "autoplay": true, "autoplaySpeed": 10000, "infinite": false}
-  
-  // italian = {cuisine:"Italian", pic: "../../assets/italian.jpg"}
-  // indian = {cuisine:"Indian", pic: "../../assets/indian.jpg"}
-  // american = {cuisine:"American", pic: "../../assets/american2.jpg"}
-  // slides = [this.italian, this.indian, this.american]
-
   constructor() { }
   showNotif = false;
   notif = "notification is-success"
   notifExit = "notification is-success animate__animated animate__fadeOut animate__delay-2s"
 
   ngOnInit(): void {
-
-    // this.showNotif = true
     
     
   }

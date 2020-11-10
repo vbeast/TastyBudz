@@ -4,9 +4,7 @@
 <app-nav-bar [onHomepage] = "true"></app-nav-bar>
 
 <body>
-    <div id="hero"> 
-        <!-- <input class="input has-icons-right" id="heroSearch" placeholder="Search Recipies"> -->
-    
+    <div id="hero">     
         <p class="control has-icons-left">
             <input class="input has-icons-left is-light" id="heroSearch" [(ngModel)] ="sendquery" (keyup.enter)="goToViewRecipies(null)" placeholder="Search Recipies">
             <span class="icon is-left">

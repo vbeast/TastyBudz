@@ -1,7 +1,6 @@
 import { Component, OnInit, Input, Output} from '@angular/core';
 import {recipeCard} from 'src/app/recipecard/recipecard';
 import { UserService } from '../services/user-service.service';
-import { User } from '../models/user';
 import {Router} from "@angular/router";
 import { RecipeService } from '../services/recipe.service';
 import {animate, trigger, transition, style} from '@angular/animations'
@@ -59,7 +58,6 @@ export class RecipecardComponent implements OnInit {
   deleteDish(i, dish) {
 
     var recipeObject = dish
-    // console.log(recipeObject)
     var userInfo = this.userService.getLocalStorage()
     var deleted = this.dishes.splice(i,1)
     this.userService.deleteItem(recipeObject, userInfo.token)
@@ -70,7 +68,6 @@ export class RecipecardComponent implements OnInit {
     var recipeObject = dish.recipe
     console.log(recipeObject)
     var userInfo = this.userService.getLocalStorage()
-    // var deleted = this.dishes.splice(i,1)
     this.userService.deleteItem(recipeObject, userInfo.token)
   }
 

@@ -55,7 +55,6 @@ log(){
        user.email = this.sheet.email;
        user.lastname = this.sheet.lastname;
        user.password = this.sheet.password;
-       //user.recipies[0] = "burger";
        user.recipies;
 
        console.log("saving user from component: ", user);

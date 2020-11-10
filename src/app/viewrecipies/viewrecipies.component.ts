@@ -3,10 +3,6 @@ import {HomepageComponent} from 'src/app/homepage/homepage.component'
 import { RecipeService } from '../services/recipe.service';
 import { SearchinteractionService } from '../searchinteraction.service';
 import {SessionStorageService} from 'ngx-webstorage';
-import { ElementFinder } from 'protractor';
-import { ViewportScroller } from '@angular/common';
-import { CompileShallowModuleMetadata } from '@angular/compiler';
-import { mapToMapExpression } from '@angular/compiler/src/render3/util';
 import {LoggedInServiceService} from'../logged-in-service.service'
 
 
@@ -75,7 +71,6 @@ export class ViewrecipiesComponent implements OnInit {
       this.filterRecipes(ingred[1])
     }
     if(ingred[0] == "cookTime" && ingred[2] == false){
-      console.log(ingred)
       this.filterCookTimes(ingred[1])
     }
     if(ingred[0] == "cookTime" && ingred[2] == true){
@@ -86,7 +81,6 @@ export class ViewrecipiesComponent implements OnInit {
       this.revertDishes(null)
     }
     if(ingred[0] == "cals"){
-      console.log(ingred)
       this.filterCalories(ingred[1])
 
     }
@@ -169,7 +163,6 @@ export class ViewrecipiesComponent implements OnInit {
       try {
         this.dishes = data.recipies.hits
         this.rootDishes = data.recipies.hits
-        console.log(this.dishes)
         if(this.dishes.length >= 10){
           this.showDishes = this.dishes.slice(0,11)
         }
@@ -178,7 +171,6 @@ export class ViewrecipiesComponent implements OnInit {
         }
         this.showSpinner = false
       } catch (error) {
-        console.log("error occured:" + error)
       }
      
     })
@@ -217,7 +209,6 @@ filterRecipes(ingred){
       }
     }
   this.dishes = filteredDishes
-  console.log(this.dishes.length)
   this.showDishes = filteredDishes.slice(0,11)
 }
 
@@ -230,7 +221,6 @@ revertDishes(ingred){
     }
   }
   var ingreds = this.ingredFilters
-  console.log(ingreds)
   if(ingreds.length == 0){
     this.dishes = this.rootDishes
     this.setShowDishes()
@@ -255,28 +245,11 @@ revertDishes(ingred){
       }
       updatedDishes = filteredDishes
   }
-    console.log(updatedDishes)
-    console.log("reveerted")
+
     this.dishes = updatedDishes
     this.setShowDishes()
 }
-checkDishes(dishes, ingreds){
-  // for(var i =0; i<ingreds.length; i++){
-  //   var currentingred = ingreds[i]
-  //   for(var q =0; q<dishes.length; q++){
-  //     var currentDish = dishes[q]
-  //     var ingredientLines = currentDish.recipe.ingredientLines
-  //     for(var z= 0; z<ingredientLines.length; z++){
-  //         var ingredientLine = ingredientLines[z]
-  //         if(ingredientLine.includes(currentingred)){
-  //           console.log(true)
-  //           break
-  //         }
-  //     }
-  //   }
-  // }
-  console.log(this.loggedIn)
-}
+
 }
 
 

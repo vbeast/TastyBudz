@@ -3,7 +3,6 @@ import {Navbar} from "../navbar";
 import {Router} from "@angular/router";
 import { UserService } from '../services/user-service.service';
 import { SearchinteractionService } from '../searchinteraction.service';
-import { DeviceDetectorService } from 'ngx-device-detector';
 import {LoggedInServiceService} from'../logged-in-service.service'
 
 @Component({

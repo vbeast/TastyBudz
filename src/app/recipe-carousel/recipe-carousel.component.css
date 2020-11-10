@@ -1,0 +1,26 @@
+#text{
+    font-family: Palatino;
+}
+#box{
+    text-align: center;
+    padding-top: 20px;
+    cursor: pointer;
+}
+#image{
+
+    object-fit: cover;
+    height: 100%;
+    
+    
+    
+    
+}
+#border{
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    box-shadow: -10px 6px 21px -6px #000000;
+}

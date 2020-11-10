@@ -1,6 +1,5 @@
 #carousel{
     width: auto;
-    /* height: 400px; */
     border: 0.5px solid transparent;
     
 }
@@ -27,7 +26,6 @@
 
 }
 #column1{
-    /* background-color:rgb(238, 233, 222); */
     border-right: 1px solid gray;
 }
 #column2{
@@ -76,7 +74,6 @@
 #heroSearch{
     width: 550px;
     height: 60px;
-    /* opacity: 0.7; */
     background-color: rgba(255, 255, 255, 0.7);
     color: black;
 }
